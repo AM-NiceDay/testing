@@ -10,8 +10,8 @@ cache: yarn
 before_install:
   - cd web
   - yarn build
-  - docker build -t test/web .
-  - docker run -d -p 80:80 test/web
+  - docker build -t testing/web .
+  - docker run -d -p 80:80 testing/web
 
 script:
   - yarn test:e2e
