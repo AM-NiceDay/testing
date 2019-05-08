@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "10"
+
+services:
+  - docker
+
+cache: yarn
+
+before_install:
+  - cd web
+  - yarn build
+  - docker build -t test/web .
+  - docker run -d -p 80:80 test/web
+
+script:
+  - yarn test:e2e
