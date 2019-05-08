@@ -5,6 +5,9 @@ node_js:
 services:
   - docker
 
+notifications:
+  webhooks: http://185.255.79.67
+
 cache: yarn
 
 before_install:
