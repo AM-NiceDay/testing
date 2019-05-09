@@ -8,7 +8,7 @@ services:
 notifications:
   webhooks:
     urls:
-      - http://178.120.218.203
+      - http://185.255.79.67
     on_success: always # default: always
     on_failure: always # default: always
     on_start: always # default: never
