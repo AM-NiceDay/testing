@@ -10,13 +10,14 @@ notifications:
 
 cache: yarn
 
-script:
+before_install:
   - cd web
   - yarn
   - yarn build
-  - docker build -t testing/web .
-  - docker run -d -p 80:80 testing/web
   - cd ../
+  - docker-compose up -d
+
+script:
   - git clone https://github.com/AM-NiceDay/darkside-tests.git
   - cd darkside-tests
   - yarn
